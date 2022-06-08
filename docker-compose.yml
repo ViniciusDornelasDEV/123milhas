@@ -1,0 +1,26 @@
+version: "3.7"
+services:
+  app:
+    build:
+      args:
+        user: Vinicius
+        uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    image: apimilhas
+    container_name: apimilhas-app
+    ports:
+      - 8010:8010
+    restart: unless-stopped
+    working_dir: /var/www/api
+    command: php artisan serve --host=0.0.0.0 --port=8010
+    volumes:
+      - ./:/var/www/api
+    external_links:
+      - db:db
+    networks:
+      - londe
+
+networks:
+  londe:
+    external: true
