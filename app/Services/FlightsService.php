@@ -81,8 +81,10 @@ class FlightsService
     }
 
     private function setTotals(){
-        $this->groupedFlights['totalGroups'] = count($this->groupedFlights['groups']);
-        $this->groupedFlights['cheapestPrice'] = $this->groupedFlights['groups'][0]['totalPrice'];
-        $this->groupedFlights['cheapestGroup'] = $this->groupedFlights['groups'][0]['uniqueId'];
+        if(count($this->groupedFlights['groups']) > 0){
+            $this->groupedFlights['totalGroups'] = count($this->groupedFlights['groups']);
+            $this->groupedFlights['cheapestPrice'] = $this->groupedFlights['groups'][0]['totalPrice'];
+            $this->groupedFlights['cheapestGroup'] = $this->groupedFlights['groups'][0]['uniqueId'];
+        }   
     }
 }
