@@ -1,0 +1,51 @@
+{
+	"info": {
+		"_postman_id": "dcf9886c-b265-40ec-8785-a467d5fe142a",
+		"name": "123Milhas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "123Voos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://prova.123milhas.net/api/flights",
+					"protocol": "http",
+					"host": [
+						"prova",
+						"123milhas",
+						"net"
+					],
+					"path": [
+						"api",
+						"flights"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getGroupedFlights",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8010/api/flights/grouped",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"flights",
+						"grouped"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -47,7 +47,7 @@ class FlightsService
     }
 
     private function groupOutboundsInbounds(){
-        //split and group outbounds and inbounds by fare and price
+        //group outbounds and inbounds by fare and price
         foreach($this->flights as $key => $flight){
             if($flight->outbound == 1){
                 if(!array_key_exists($flight->price.$flight->fare, $this->outbounds)){
@@ -66,7 +66,6 @@ class FlightsService
     private function createFlightGroups(){
         $countGroups = 0;
         foreach($this->outbounds as $key => $outbound){
-            //$countGroups++;
             foreach($this->inbounds as $inbound){
                 if($outbound[0]->fare == $inbound[0]->fare){
                     $this->groupedFlights['groups'][$countGroups] = array(
